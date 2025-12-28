@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Ordinatexte</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #000;
+        font-family: monospace;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* Zone de contrôle */
+    #controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 80px;
+        margin-bottom: 40px;
+        gap: 16px;
+    }
+
+    h1 {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+        letter-spacing: 0.15em;
+    }
+
+    button {
+        font-family: monospace;
+        font-size: 14px;
+        padding: 6px 14px;
+        background: #fff;
+        color: #000;
+        border: 1px solid #000;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #000;
+        color: #fff;
+    }
+
+    /* Cadre du texte généré */
+    #output {
+        max-width: 900px;
+        margin: 0 auto 60px auto;
+        padding: 24px;
+        border: 1px solid #000;
+        white-space: pre-wrap;
+        min-height: 200px;
+        box-sizing: border-box;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 12px;
+        opacity: 0.5;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<div id="controls">
+    <h1>ORDINATEXTE</h1>
+    <button id="generateBtn">Générer</button>
+</div>
+
+<div id="output"></div>
+
+<footer>
+    © Pierre-Luc Verville — 2025
+</footer>
+
+<script src="patriarche.js"></script>
+<script>
+    const btn = document.getElementById("generateBtn");
+    const output = document.getElementById("output");
+
+    btn.addEventListener("click", () => {
+        output.textContent = "";
+        output.textContent = generate_prose_block();
+    });
+</script>
+
+</body>
+</html>
